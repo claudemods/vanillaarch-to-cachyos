@@ -31,4 +31,7 @@ bash -c "$(curl -fsSL https://raw.githubusercontent.com/claudemods/vanillaarch-t
 bash -c "$(curl -fsSL https://raw.githubusercontent.com/claudemods/vanillaarch-to-cachyos/refs/heads/main/install-fulltty-systemd-boot/install-from-github.sh)"
 
 # install-fullkde-systemd-boot v1.0 23-10-2025:
-bash -c "$(curl -fsSL https://raw.githubusercontent.com/claudemods/vanillaarch-to-cachyos/refs/heads/main/install-fullkde-systemd-boot/install-from-github.sh)"****
+bash -c "$(curl -fsSL https://raw.githubusercontent.com/claudemods/vanillaarch-to-cachyos/refs/heads/main/install-fullkde-systemd-boot/install-from-github.sh)"
+
+# install-fullgnome-systemd-boot v1.0 23-10-2025:
+bash -c "$(curl -fsSL https://raw.githubusercontent.com/claudemods/vanillaarch-to-cachyos/refs/heads/main/install-fullgnome-systemd-boot/install-from-github.sh)"
