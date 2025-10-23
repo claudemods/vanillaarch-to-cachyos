@@ -10,6 +10,11 @@ Automated scripts to transform a standard Arch Linux installation into a fully-f
 - **🌟 Enhanced User Experience**: Includes Plymouth boot screen and Fish shell configuration
 - **📦 Comprehensive Package Selection**: All essential CachyOS applications and utilities
 
+## 📺 YouTube Tutorial
+
+**KDE with GRUB Guide:**  
+https://www.youtube.com/watch?v=uEAp32OL9Y8
+
 ## 📥 Installation Methods
 
 ```bash
@@ -26,4 +31,4 @@ bash -c "$(curl -fsSL https://raw.githubusercontent.com/claudemods/vanillaarch-t
 bash -c "$(curl -fsSL https://raw.githubusercontent.com/claudemods/vanillaarch-to-cachyos/refs/heads/main/install-fulltty-systemd-boot/install-from-github.sh)"
 
 # install-fullkde-systemd-boot v1.0 23-10-2025:
-bash -c "$(curl -fsSL https://raw.githubusercontent.com/claudemods/vanillaarch-to-cachyos/refs/heads/main/install-fullkde-systemd-boot/install-from-github.sh)"
+bash -c "$(curl -fsSL https://raw.githubusercontent.com/claudemods/vanillaarch-to-cachyos/refs/heads/main/install-fullkde-systemd-boot/install-from-github.sh)"****
