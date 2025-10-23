@@ -17,3 +17,8 @@ bash -c "$(curl -fsSL https://raw.githubusercontent.com/claudemods/vanillaarch-t
 
 # install-fullkde-grub v1.0 23-10-2025:
 bash -c "$(curl -fsSL https://raw.githubusercontent.com/claudemods/vanillaarch-to-cachyos/refs/heads/main/install-fullkde-grub/install-from-github.sh)"
+
+
+# install-fullkde-systemd-boot v1.0 23-10-2025:
+bash -c "$(curl -fsSL https://raw.githubusercontent.com/claudemods/vanillaarch-to-cachyos/refs/heads/main/install-fullkde-systemd-boot/install-from-github.sh)"
+
