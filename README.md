@@ -15,7 +15,10 @@ Automated scripts to transform a standard Arch Linux installation into a fully-f
 **KDE with GRUB Guide:**  
 https://www.youtube.com/watch?v=uEAp32OL9Y8
 
-## 📥 Installation Methods
+## 📥 Aur Package "this contains a menu driven script"
+archconv or link https://aur.archlinux.org/packages/archconv
+
+## 📥 Bash Command Installation Methods
 
 ```bash
 # install-fulltty-grub v1.0 23-10-2025:
