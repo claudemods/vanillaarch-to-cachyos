@@ -1257,6 +1257,7 @@ print_info "Configuring Fish shell..."
 chsh -s $(which fish)
 mkdir /home/$USER/.config/fish
 cp -r /home/$USER/vanillaarch-to-cachyos/install-fullkde-grub/config.fish /home/$USER/.config/fish/config.fish
+cp -r /home/$USER/vanillaarch-to-cachyos/install-fullkde-grub/.zshrc /home/$USER/.zshrc
 sudo chmod +X /home/$USER/.config/fish/config.fish
 print_status "Fish configuration applied"
 
