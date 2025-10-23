@@ -2,7 +2,7 @@
 script to build cachyos from vanilla arch 
 
 
-geub kde tutorial
+grub kde tutorial
 
 https://www.youtube.com/watch?v=uEAp32OL9Y8
 
