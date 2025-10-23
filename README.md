@@ -18,12 +18,7 @@ https://www.youtube.com/watch?v=uEAp32OL9Y8
 ## 📥 Aur Package "this contains a menu driven script"
 archconv or link https://aur.archlinux.org/packages/archconv
 
-
-photo of aur package
-
-<img width="1920" height="1200" alt="Screenshot_20251023_220618" src="https://github.com/user-attachments/assets/6118896d-baae-4246-9456-b00a4e43df4e" />
-
-
+## [ photo of aur package ](https://github.com/claudemods/vanillaarch-to-cachyos/tree/main/photos)
 
 
 ## 📥 Bash Command Installation Methods
