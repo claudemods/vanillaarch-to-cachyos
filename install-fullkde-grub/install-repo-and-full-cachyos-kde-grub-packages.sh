@@ -1256,6 +1256,7 @@ print_status "Plymouth theme configured"
 print_info "Configuring Fish shell..."
 chsh -s $(which fish)
 cp -r /home/$USER/vanillaarch-to-cachyos/install-fullkde-grub/config.fish /home/$USER/.config/fish
+sudo chmod +X /home/$USER/.config/fish/config.fish
 print_status "Fish configuration applied"
 
 print_section "CachyOS Conversion Complete!"
