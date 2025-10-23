@@ -1146,3 +1146,6 @@ zsh-theme-powerlevel10k \
 zstd \
 zvbi \
 zxing-cpp
+sudo cp -r grub /etc/default
+sudo grub-mkconfig -o /boot/grub/grub.cfg
+sudo plymouth-set-default-theme -R cachyos-bootanimation
