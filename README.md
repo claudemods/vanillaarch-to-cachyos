@@ -1,7 +1,8 @@
 # vanillaarch-to-cachyos
 script to build cachyos from vanilla arch 
 
-there are many scripts to choose from all of cachyos apps and cachyos grub/systemd-boot, plymouth and fish config will be installed
+there are many scripts to choose from all of cachyos apps and cachyos grub/systemd-boot
+plymouth and fish config will be installed
 
 
 grub kde tutorial
