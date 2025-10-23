@@ -7,7 +7,7 @@ Automated scripts to transform a standard Arch Linux installation into a fully-f
 - **🎯 Multiple Desktop Environments**: KDE Plasma, GNOME, or minimal TTY-only installation
 - **🔧 Dual Bootloader Support**: GRUB or systemd-boot configurations
 - **⚡ CachyOS Integration**: Performance-optimized kernels and repositories
-- **🌟 Enhanced User Experience**: Includes Plymouth boot screen and Fish shell configuration
+- **🌟 Enhanced User Experience**: Includes Plymouth boot screen, Grub Artwork and Fish shell configuration
 - **📦 Comprehensive Package Selection**: All essential CachyOS applications and utilities
 
 ## 📺 YouTube Tutorial
