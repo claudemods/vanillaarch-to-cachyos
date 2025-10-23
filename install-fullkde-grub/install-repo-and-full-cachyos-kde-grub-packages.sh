@@ -1254,11 +1254,11 @@ sudo plymouth-set-default-theme -R cachyos-bootanimation
 print_status "Plymouth theme configured"
 
 print_info "Configuring Fish shell..."
-chsh -s $(which fish)
 mkdir /home/$USER/.config/fish
 cp -r /home/$USER/vanillaarch-to-cachyos/install-fullkde-grub/config.fish /home/$USER/.config/fish/config.fish
 cp -r /home/$USER/vanillaarch-to-cachyos/install-fullkde-grub/.zshrc /home/$USER/.zshrc
 sudo chmod +X /home/$USER/.config/fish/config.fish
+chsh -s $(which fish)
 print_status "Fish configuration applied"
 
 print_section "CachyOS Conversion Complete!"
