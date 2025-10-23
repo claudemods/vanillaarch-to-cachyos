@@ -2,7 +2,7 @@
 
 GRUB_DEFAULT=0
 GRUB_TIMEOUT='5'
-GRUB_DISTRIBUTOR='CachyOS Linux'
+GRUB_DISTRIBUTOR='CachyOS'
 GRUB_CMDLINE_LINUX_DEFAULT='quiet splash apparmor=1 security=apparmor nowatchdog nvme_load=YES zswap.enabled=0 loglevel=3'
 GRUB_CMDLINE_LINUX=""
 
