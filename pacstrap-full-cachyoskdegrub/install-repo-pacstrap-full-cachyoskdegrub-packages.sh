@@ -1149,3 +1149,4 @@ zxing-cpp
 sudo cp -r grub /etc/default
 sudo grub-mkconfig -o /boot/grub/grub.cfg
 sudo plymouth-set-default-theme -R cachyos-bootanimation
+sudo cp -r config.fish /home/$USER/.config/fish
