@@ -1242,7 +1242,7 @@ print_status "Package installation completed"
 print_section "Step 3: System Configuration"
 
 print_info "Configuring GRUB bootloader..."
-sudo cp -r grub /etc/default
+sudo cp -r /home/$USER/vanillaarch-to-cachyos/install-fullkde-grub/grub /etc/default
 print_status "GRUB configuration copied"
 
 print_info "Generating new GRUB configuration..."
@@ -1255,7 +1255,7 @@ print_status "Plymouth theme configured"
 
 print_info "Configuring Fish shell..."
 chsh -s $(which fish)
-sudo cp -r config.fish /home/$USER/.config/fish
+sudo cp -r /home/$USER/vanillaarch-to-cachyos/install-fullkde-grub/config.fish /home/$USER/.config/fish
 print_status "Fish configuration applied"
 
 print_section "CachyOS Conversion Complete!"
