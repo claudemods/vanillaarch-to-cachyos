@@ -70,6 +70,16 @@ if [[ $confirm != "yes" ]]; then
     exit 0
 fi
 
+# Check and remove virt-manager if installed
+print_section "Checking for virt-manager"
+if pacman -Qi virt-manager &>/dev/null; then
+    print_info "virt-manager found, removing it..."
+    sudo pacman -Rns --noconfirm virt-manager
+    print_status "virt-manager removed successfully"
+else
+    print_info "virt-manager not installed, proceeding..."
+fi
+
 print_section "Starting CachyOS Conversion Process"
 
 # Step 1: Download and setup CachyOS repositories
