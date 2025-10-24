@@ -21,7 +21,7 @@ cat << "EOF"
 EOF
 
 echo -e "${CYAN}"
-echo "           claudemods Vanilla Arch Gnome Grub to CachyOS Gnome Grub v1.0 23-10-2025"
+echo "           claudemods Vanilla Arch Gnome Grub to CachyOS Gnome Grub v1.0 24-10-2025"
 echo -e "${NC}"
 echo "================================================================================"
 echo ""
