@@ -1264,7 +1264,7 @@ print_status "Fish configuration applied"
 print_info "Apply Cachyos Kde Theme..."
 sudo chmod +x /home/$USER/vanillaarch-to-cachyos/install-fullkde-systemd-boot/installcachyostheme.sh
 sudo chmod +x /home/$USER/vanillaarch-to-cachyos/install-fullkde-systemd-boot/start.sh
-cd /home/$USER/vanillaarch-to-cachyos/install-fullkde-grub && ./installcachyostheme.sh
+cd /home/$USER/vanillaarch-to-cachyos/install-fullkde-systemd-boot && ./installcachyostheme.sh
 print_info "Theme Applied..."
 
 print_section "CachyOS Conversion Complete!"
