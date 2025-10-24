@@ -1271,6 +1271,10 @@ sudo chmod +X /home/$USER/.config/fish/config.fish
 chsh -s $(which fish)
 print_status "Fish configuration applied"
 
+print_info "Apply Cachyos Kde Theme..."
+./installcachyostheme.sh
+print_info "Theme Applied..."
+
 print_section "CachyOS Conversion Complete!"
 echo -e "${GREEN}${BOLD}"
 echo "Conversion to CachyOS has been completed successfully!"
