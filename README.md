@@ -21,7 +21,7 @@ archconv or link https://aur.archlinux.org/packages/archconv
 ## [ photo of aur package ](https://github.com/claudemods/vanillaarch-to-cachyos/tree/main/photos)
 
 
-## 📥 Bash Command Installation Methods For Bash Script Version
+## 📥 Bash Command Methods For Bash Script Version
 
 ```bash
 # install-fulltty-grub v1.0 23-10-2025:
