@@ -1,3 +1,7 @@
+## [ changelogs ](https://github.com/claudemods/vanillaarch-to-cachyos/blob/main/changelog.md)
+
+
+
 # 🚀 Vanilla Arch to CachyOS Migration Script
 
 Automated scripts to transform a standard Arch Linux installation into a fully-featured CachyOS system with performance-optimized packages and enhanced user experience.
