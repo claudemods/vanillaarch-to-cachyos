@@ -9,6 +9,7 @@
 #include "gnomegrub.h"
 #include "ttysystemd-boot.h"
 #include "kdesystemd-boot.h"
+#include "gnomesystemd-boot.h"
 
 class MigrationScript {
 private:
@@ -28,8 +29,8 @@ private:
         {2, "Full KDE Plasma - GRUB", "", true},
         {3, "Full GNOME - GRUB", "", true},
         {4, "TTY Only (No Desktop) - systemd-boot", "", true},
-        {5, "Full KDE Plasma - systemd-boot", "", true},  // Now uses internal implementation
-        {6, "Full GNOME - systemd-boot", "https://raw.githubusercontent.com/claudemods/vanillaarch-to-cachyos/refs/heads/main/install-fullgnome-systemd-boot/install-from-github.sh", false}
+        {5, "Full KDE Plasma - systemd-boot", "", true},
+        {6, "Full GNOME - systemd-boot", "", true}  // Now uses internal implementation
     };
 
     int currentSelection = 1;
@@ -167,6 +168,9 @@ public:
                         migration.runMigration();
                     } else if (choice == 5) {
                         KdeSystemdBootMigration migration;
+                        migration.runMigration();
+                    } else if (choice == 6) {
+                        GnomeSystemdBootMigration migration;
                         migration.runMigration();
                     }
                 } else {
