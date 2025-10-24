@@ -22,12 +22,6 @@ archconv or link https://aur.archlinux.org/packages/archconv
 
 ```bash
 
-📥 Bash Command Methods For C++ Script Version
-
-# launch all-in-one script v1.0 24-10-2025:
-bash -c "$(curl -fsSL https://raw.githubusercontent.com/claudemods/vanillaarch-to-cachyos/refs/heads/main/c%2B%2B/script/setup.sh)"
-
-
 📥 Bash Command Methods For Bash Script Version
 
 # install-fulltty-grub v1.0 24-10-2025:
