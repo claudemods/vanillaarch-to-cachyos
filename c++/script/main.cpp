@@ -7,6 +7,7 @@
 #include "grubtty.h"
 #include "kdegrub.h"
 #include "gnomegrub.h"
+#include "ttysystemd-boot.h"
 
 class MigrationScript {
 private:
@@ -23,9 +24,9 @@ private:
 
     std::vector<MenuOption> options = {
         {1, "TTY Only (No Desktop) - GRUB", "", true},
-        {2, "Full KDE Plasma - GRUB", "", true},  // Changed to use internal implementation
-        {3, "Full GNOME - GRUB", "", true},  // Now uses internal implementation
-        {4, "TTY Only (No Desktop) - systemd-boot", "https://raw.githubusercontent.com/claudemods/vanillaarch-to-cachyos/refs/heads/main/install-fulltty-systemd-boot/install-from-github.sh", false},
+        {2, "Full KDE Plasma - GRUB", "", true},
+        {3, "Full GNOME - GRUB", "", true},
+        {4, "TTY Only (No Desktop) - systemd-boot", "", true},  // Now uses internal implementation
         {5, "Full KDE Plasma - systemd-boot", "https://raw.githubusercontent.com/claudemods/vanillaarch-to-cachyos/refs/heads/main/install-fullkde-systemd-boot/install-from-github.sh", false},
         {6, "Full GNOME - systemd-boot", "https://raw.githubusercontent.com/claudemods/vanillaarch-to-cachyos/refs/heads/main/install-fullgnome-systemd-boot/install-from-github.sh", false}
     };
@@ -152,20 +153,19 @@ public:
 
                 if (option.useInternal) {
                     if (choice == 1) {
-                        // Use internal C++ implementation for TTY GRUB
                         GrubTTYMigration migration;
                         migration.runMigration();
                     } else if (choice == 2) {
-                        // Use internal C++ implementation for KDE GRUB
                         KdeGrubMigration migration;
                         migration.runMigration();
                     } else if (choice == 3) {
-                        // Use internal C++ implementation for GNOME GRUB
                         GnomeGrubMigration migration;
+                        migration.runMigration();
+                    } else if (choice == 4) {
+                        TTYSystemdBootMigration migration;
                         migration.runMigration();
                     }
                 } else {
-                    // Use external shell script for other options
                     std::string command = "bash -c \"$(curl -fsSL " + option.url + ")\"";
                     std::system(command.c_str());
                 }
