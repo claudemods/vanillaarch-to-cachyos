@@ -183,7 +183,6 @@ install_theme() {
     echo -e "${CYAN}\rInstallation complete! Theme successfully installed.${NC}"
     echo -e "${CYAN}\rConversion to CachyOS has been completed successfully!${NC}"
     echo -e "${CYAN}\rPlease reboot your system to apply all changes.${NC}"
-    sudo rm -rf /home/$USER/vanillaarch-to-cachyos
     install_backup "$CONFIG_FOLDER" "$CONFIG_PATH" "$DATA_PATH"
     echo -e "${CYAN}\rInstallation complete! Theme successfully installed.${NC}"
     LOG_TEXT+="✓ Theme installed successfully\n"
