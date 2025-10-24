@@ -20,16 +20,16 @@ archconv or link https://aur.archlinux.org/packages/archconv
 
 ## [ photo of aur package ](https://github.com/claudemods/vanillaarch-to-cachyos/tree/main/photos)
 
+```bash
 
-
-## 📥 Bash Command Methods For C++ Script Version
+📥 Bash Command Methods For C++ Script Version
 
 # launch all-in-one script v1.0 24-10-2025:
 bash -c "$(curl -fsSL https://raw.githubusercontent.com/claudemods/vanillaarch-to-cachyos/refs/heads/main/c%2B%2B/script/setup.sh)"
 
-## 📥 Bash Command Methods For Bash Script Version
 
-```bash
+📥 Bash Command Methods For Bash Script Version
+
 # install-fulltty-grub v1.0 24-10-2025:
 bash -c "$(curl -fsSL https://raw.githubusercontent.com/claudemods/vanillaarch-to-cachyos/refs/heads/main/install-fulltty-grub/install-from-github.sh)"
 
@@ -47,3 +47,6 @@ bash -c "$(curl -fsSL https://raw.githubusercontent.com/claudemods/vanillaarch-t
 
 # install-fullgnome-systemd-boot v1.0 24-10-2025:
 bash -c "$(curl -fsSL https://raw.githubusercontent.com/claudemods/vanillaarch-to-cachyos/refs/heads/main/install-fullgnome-systemd-boot/install-from-github.sh)"
+
+
+
