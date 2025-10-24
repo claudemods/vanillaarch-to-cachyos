@@ -171,6 +171,7 @@ install_backup() {
     done
 
     LOG_TEXT+="Applying KDE configurations...\n"
+    plasma-apply-colorscheme BreezeDark
     qdbus6 org.kde.KWin /KWin reconfigure
     kquitapp6 plasmashell
     cd /home/$USER/vanillaarch-to-cachyos/install-fullkde-grub && ./start.sh > /dev/null 2>&1
