@@ -21,23 +21,29 @@ archconv or link https://aur.archlinux.org/packages/archconv
 ## [ photo of aur package ](https://github.com/claudemods/vanillaarch-to-cachyos/tree/main/photos)
 
 
+
+## 📥 Bash Command Methods For C++ Script Version
+
+# launch all-in-one script v1.0 24-10-2025:
+bash -c "$(curl -fsSL https://raw.githubusercontent.com/claudemods/vanillaarch-to-cachyos/refs/heads/main/c%2B%2B/script/setup.sh)"
+
 ## 📥 Bash Command Methods For Bash Script Version
 
 ```bash
-# install-fulltty-grub v1.0 23-10-2025:
+# install-fulltty-grub v1.0 24-10-2025:
 bash -c "$(curl -fsSL https://raw.githubusercontent.com/claudemods/vanillaarch-to-cachyos/refs/heads/main/install-fulltty-grub/install-from-github.sh)"
 
-# install-fullkde-grub v1.0 23-10-2025:
+# install-fullkde-grub v1.0 24-10-2025:
 bash -c "$(curl -fsSL https://raw.githubusercontent.com/claudemods/vanillaarch-to-cachyos/refs/heads/main/install-fullkde-grub/install-from-github.sh)"
 
-# install-fullgnome-grub v1.0 23-10-2025:
+# install-fullgnome-grub v1.0 24-10-2025:
 bash -c "$(curl -fsSL https://raw.githubusercontent.com/claudemods/vanillaarch-to-cachyos/refs/heads/main/install-fullgnome-grub/install-from-github.sh)"
 
-# install-fulltty-systemd-boot v1.0 23-10-2025:
+# install-fulltty-systemd-boot v1.0 24-10-2025:
 bash -c "$(curl -fsSL https://raw.githubusercontent.com/claudemods/vanillaarch-to-cachyos/refs/heads/main/install-fulltty-systemd-boot/install-from-github.sh)"
 
-# install-fullkde-systemd-boot v1.0 23-10-2025:
+# install-fullkde-systemd-boot v1.0 24-10-2025:
 bash -c "$(curl -fsSL https://raw.githubusercontent.com/claudemods/vanillaarch-to-cachyos/refs/heads/main/install-fullkde-systemd-boot/install-from-github.sh)"
 
-# install-fullgnome-systemd-boot v1.0 23-10-2025:
+# install-fullgnome-systemd-boot v1.0 24-10-2025:
 bash -c "$(curl -fsSL https://raw.githubusercontent.com/claudemods/vanillaarch-to-cachyos/refs/heads/main/install-fullgnome-systemd-boot/install-from-github.sh)"
