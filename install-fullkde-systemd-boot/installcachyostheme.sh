@@ -173,7 +173,7 @@ install_backup() {
     LOG_TEXT+="Applying KDE configurations...\n"
     qdbus6 org.kde.KWin /KWin reconfigure
     kquitapp6 plasmashell
-    ./start.sh > /dev/null 2>&1
+    cd /home/$USER/vanillaarch-to-cachyos/install-fullkde-systemd-boot && ./start.sh > /dev/null 2>&1
     LOG_TEXT+="✓ KDE configuration applied successfully\n"
 }
 
