@@ -8,6 +8,7 @@ QT += core
 SOURCES += main.cpp
 HEADERS += grubtty.h
 HEADERS += kdegrub.h
+HEADERS += gnomegrub.h
 
 # C++ standard
 CONFIG += c++23

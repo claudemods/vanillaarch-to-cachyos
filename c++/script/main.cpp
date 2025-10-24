@@ -6,6 +6,7 @@
 #include <unistd.h>
 #include "grubtty.h"
 #include "kdegrub.h"
+#include "gnomegrub.h"
 
 class MigrationScript {
 private:
@@ -23,7 +24,7 @@ private:
     std::vector<MenuOption> options = {
         {1, "TTY Only (No Desktop) - GRUB", "", true},
         {2, "Full KDE Plasma - GRUB", "", true},  // Changed to use internal implementation
-        {3, "Full GNOME - GRUB", "https://raw.githubusercontent.com/claudemods/vanillaarch-to-cachyos/refs/heads/main/install-fullgnome-grub/install-from-github.sh", false},
+        {3, "Full GNOME - GRUB", "", true},  // Now uses internal implementation
         {4, "TTY Only (No Desktop) - systemd-boot", "https://raw.githubusercontent.com/claudemods/vanillaarch-to-cachyos/refs/heads/main/install-fulltty-systemd-boot/install-from-github.sh", false},
         {5, "Full KDE Plasma - systemd-boot", "https://raw.githubusercontent.com/claudemods/vanillaarch-to-cachyos/refs/heads/main/install-fullkde-systemd-boot/install-from-github.sh", false},
         {6, "Full GNOME - systemd-boot", "https://raw.githubusercontent.com/claudemods/vanillaarch-to-cachyos/refs/heads/main/install-fullgnome-systemd-boot/install-from-github.sh", false}
@@ -157,6 +158,10 @@ public:
                     } else if (choice == 2) {
                         // Use internal C++ implementation for KDE GRUB
                         KdeGrubMigration migration;
+                        migration.runMigration();
+                    } else if (choice == 3) {
+                        // Use internal C++ implementation for GNOME GRUB
+                        GnomeGrubMigration migration;
                         migration.runMigration();
                     }
                 } else {
