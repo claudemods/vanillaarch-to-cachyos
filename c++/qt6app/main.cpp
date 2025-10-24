@@ -17,6 +17,7 @@
 #include <QThread>
 #include <QTextCursor>
 #include <QTimer>
+#include <QInputDialog>
 
 // Include your header files
 #include "grubtty.h"
@@ -36,6 +37,8 @@ private:
     QPushButton *clearLogButton;
     QLabel *bannerLabel;
     QLabel *titleLabel;
+    QString sudoPassword;
+    bool hasSudoAccess;
 
     struct MenuOption {
         int choice;
@@ -53,16 +56,25 @@ private:
     };
 
 public:
-    MigrationWindow(QWidget *parent = nullptr) : QWidget(parent) {
-        setupUI();
-        setupConnections();
-        applyStyling();
+    MigrationWindow(QWidget *parent = nullptr) : QWidget(parent), hasSudoAccess(false) {
+        requestSudoPassword();
+        if (hasSudoAccess) {
+            setupUI();
+            setupConnections();
+            applyStyling();
+        }
     }
 
 private slots:
     void executeMigration() {
         if (menuList->currentRow() == -1) {
             QMessageBox::warning(this, "No Selection", "Please select a migration option first.");
+            return;
+        }
+
+        if (!hasSudoAccess) {
+            QMessageBox::critical(this, "No Sudo Access", "Sudo access is required to perform migrations.");
+            requestSudoPassword();
             return;
         }
 
@@ -84,10 +96,57 @@ private slots:
     }
 
     void onSelectionChanged() {
-        executeButton->setEnabled(menuList->currentRow() != -1);
+        executeButton->setEnabled(menuList->currentRow() != -1 && hasSudoAccess);
     }
 
 private:
+    void requestSudoPassword() {
+        bool ok;
+        QString password = QInputDialog::getText(this, 
+            "Sudo Authentication",
+            "Enter your sudo password:",
+            QLineEdit::Password,
+            "",
+            &ok);
+        
+        if (ok && !password.isEmpty()) {
+            // Test sudo access
+            if (testSudoAccess(password)) {
+                sudoPassword = password;
+                hasSudoAccess = true;
+                logOutput->append("✅ Sudo authentication successful!\n");
+            } else {
+                QMessageBox::critical(this, "Authentication Failed", 
+                    "Sudo authentication failed. Please check your password and try again.");
+                hasSudoAccess = false;
+                QTimer::singleShot(0, this, &QWidget::close);
+            }
+        } else {
+            QMessageBox::information(this, "Authentication Required", 
+                "Sudo access is required to run migration tasks.");
+            hasSudoAccess = false;
+            QTimer::singleShot(0, this, &QWidget::close);
+        }
+    }
+
+    bool testSudoAccess(const QString &password) {
+        QProcess process;
+        process.start("sudo", QStringList() << "-S" << "echo" << "sudo_test");
+        
+        if (!process.waitForStarted()) {
+            return false;
+        }
+        
+        process.write(password.toUtf8() + "\n");
+        process.closeWriteChannel();
+        
+        if (!process.waitForFinished(5000)) {
+            return false;
+        }
+        
+        return (process.exitCode() == 0);
+    }
+
     void setupUI() {
         // Main layout
         QVBoxLayout *mainLayout = new QVBoxLayout(this);
@@ -95,7 +154,7 @@ private:
         // Banner with ASCII art (red)
         bannerLabel = new QLabel(this);
         bannerLabel->setText(
-            " ░█████╗░██╗░░░░░░█████╗░██╗░░░██╗██████╗░███████╗███╗░░░███╗░█████╗░██████╗░░██████╗\n"
+            " ░█████╗░██╗░░░░░░█████╗░██║░░░██╗██████╗░███████╗███╗░░░███╗░█████╗░██████╗░░██████╗\n"
             " ██╔══██╗██║░░░░░██╔══██╗██║░░░██║██╔══██╗██╔════╝████╗░████║██╔══██╗██╔══██╗██╔════╝\n"
             " ██║░░╚═╝██║░░░░░███████║██║░░░██║██║░░██║█████╗░░██╔████╔██║██║░░██║██║░░██║╚█████╗░\n"
             " ██║░░██╗██║░░░░░██╔══██║██║░░░██║██║░░██║██╔══╝░░██║╚██╔╝██║██║░░██║██║░░██║░╚═══██╗\n"
@@ -267,33 +326,45 @@ private:
             // Execute the appropriate migration based on selection
             switch(choice) {
                 case 1: {
-                    GrubTTYMigration migration;
-                    migration.runMigration();
+                    GrubTTYMigration *migration = new GrubTTYMigration(this);
+                    connect(migration, &GrubTTYMigration::migrationOutput, this, &MigrationWindow::onMigrationOutput);
+                    migration->runMigration();
+                    migration->deleteLater();
                     break;
                 }
                 case 2: {
-                    KdeGrubMigration migration;
-                    migration.runMigration();
+                    KdeGrubMigration *migration = new KdeGrubMigration(this);
+                    connect(migration, &KdeGrubMigration::migrationOutput, this, &MigrationWindow::onMigrationOutput);
+                    migration->runMigration();
+                    migration->deleteLater();
                     break;
                 }
                 case 3: {
-                    GnomeGrubMigration migration;
-                    migration.runMigration();
+                    GnomeGrubMigration *migration = new GnomeGrubMigration(this);
+                    connect(migration, &GnomeGrubMigration::migrationOutput, this, &MigrationWindow::onMigrationOutput);
+                    migration->runMigration();
+                    migration->deleteLater();
                     break;
                 }
                 case 4: {
-                    TTYSystemdBootMigration migration;
-                    migration.runMigration();
+                    TTYSystemdBootMigration *migration = new TTYSystemdBootMigration(this);
+                    connect(migration, &TTYSystemdBootMigration::migrationOutput, this, &MigrationWindow::onMigrationOutput);
+                    migration->runMigration();
+                    migration->deleteLater();
                     break;
                 }
                 case 5: {
-                    KdeSystemdBootMigration migration;
-                    migration.runMigration();
+                    KdeSystemdBootMigration *migration = new KdeSystemdBootMigration(this);
+                    connect(migration, &KdeSystemdBootMigration::migrationOutput, this, &MigrationWindow::onMigrationOutput);
+                    migration->runMigration();
+                    migration->deleteLater();
                     break;
                 }
                 case 6: {
-                    GnomeSystemdBootMigration migration;
-                    migration.runMigration();
+                    GnomeSystemdBootMigration *migration = new GnomeSystemdBootMigration(this);
+                    connect(migration, &GnomeSystemdBootMigration::migrationOutput, this, &MigrationWindow::onMigrationOutput);
+                    migration->runMigration();
+                    migration->deleteLater();
                     break;
                 }
                 default:
@@ -311,6 +382,12 @@ private:
         logOutput->moveCursor(QTextCursor::End);
         executeButton->setEnabled(true);
     }
+
+private slots:
+    void onMigrationOutput(const QString &output) {
+        logOutput->append(output);
+        logOutput->moveCursor(QTextCursor::End);
+    }
 };
 
 int main(int argc, char *argv[]) {
@@ -323,9 +400,12 @@ int main(int argc, char *argv[]) {
     app.setOrganizationName("claudemods");
 
     MigrationWindow window;
-    window.show();
-
-    return app.exec();
+    if (window.isVisible()) { // Only show if sudo authentication was successful
+        window.show();
+        return app.exec();
+    } else {
+        return 1; // Exit if sudo authentication failed
+    }
 }
 
 #include "main.moc"
