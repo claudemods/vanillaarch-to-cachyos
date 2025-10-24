@@ -1,0 +1,13 @@
+# Project name
+TARGET = archconv+
+
+# Required Qt modules
+QT += core
+
+# Source files
+SOURCES += main.cpp
+HEADERS += grubtty.h
+HEADERS += kdegrub.h
+
+# C++ standard
+CONFIG += c++23
