@@ -21,7 +21,7 @@ cat << "EOF"
 EOF
 
 echo -e "${CYAN}"
-echo "           ClaudeMods Vanilla Arch Kde Systemd-boot to CachyOS Kde Systemd-boot v1.0 23-10-2025"
+echo "           ClaudeMods Vanilla Arch Kde Systemd-boot to CachyOS Kde Systemd-boot v1.0 24-10-2025"
 echo -e "${NC}"
 echo "================================================================================"
 echo ""
