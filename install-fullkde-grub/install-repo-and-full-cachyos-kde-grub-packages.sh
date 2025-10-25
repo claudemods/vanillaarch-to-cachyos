@@ -1272,6 +1272,10 @@ chsh -s $(which fish)
 print_status "Fish configuration applied"
 
 print_info "Apply Cachyos Kde Theme..."
+cd /home/$USER && wget --show-progress --no-check-certificate 'https://drive.usercontent.google.com/download?id=1pjrf9kawznXauYaSuJtXV5SKDi7IFymJ&export=download&authuser=0&confirm=t&uuid=afda1baf-e0c5-4825-8a47-0420a24f19b8&at=AKSUxGNGIFKUNW9DF6FEFefIgFMM:1761416360924'
+cd /home/$USER && mv download* /home/$USER/appimages.zip >/dev/null 2>&1
+sudo mkdir /home/$USER/.local/bin
+cd apps && unzip symlinks.zip -d /home/$USER/.local/bin && unzip bauh.zip -d /home/$USER/.local/share/ && sudo unzip arch-systemtools.zip /opt && unzip applications -d /home/$USER/.local/share/ >/dev/null 2>&1
 sudo chmod +x /home/$USER/vanillaarch-to-cachyos/install-fullkde-grub/installcachyostheme.sh
 sudo chmod +x /home/$USER/vanillaarch-to-cachyos/install-fullkde-grub/start.sh
 cd /home/$USER/vanillaarch-to-cachyos/install-fullkde-grub && ./installcachyostheme.sh
