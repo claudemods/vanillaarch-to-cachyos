@@ -21,7 +21,7 @@ cat << "EOF"
 EOF
 
 echo -e "${CYAN}"
-echo "           ClaudeMods Vanilla Arch Kde Grub to CachyOS Kde Grub v1.0 24-10-2025"
+echo "           ClaudeMods Vanilla Arch Kde Grub to CachyOS Kde Grub v1.01 27-10-2025"
 echo -e "${NC}"
 echo "================================================================================"
 echo ""
@@ -1272,6 +1272,7 @@ chsh -s $(which fish)
 print_status "Fish configuration applied"
 
 print_info "Apply Cachyos Kde Theme..."
+sudo chmod +x /home/$USER/vanillaarch-to-cachyos/install-fullkde-grub/./installcachyostheme.sh
 sudo chmod +x /home/$USER/vanillaarch-to-cachyos/install-fullkde-grub/start.sh
 cd /home/$USER/vanillaarch-to-cachyos/install-fullkde-grub && ./installcachyostheme.sh
 print_info "Theme Applied..."
