@@ -172,6 +172,7 @@ install_backup() {
 
     LOG_TEXT+="Applying KDE configurations...\n"
     plasma-apply-colorscheme BreezeDark > /dev/null 2>&1
+    cp -r /home/$USER/vanillaarch-to-cachyos/install-fullkde-systemd-boot/cachyoskde-theme/autostart /home/$USER/.config
     cachyos-hello > /dev/null 2>&1
     qdbus6 org.kde.KWin /KWin reconfigure
     kquitapp6 plasmashell
