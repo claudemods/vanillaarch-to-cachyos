@@ -31,13 +31,13 @@ archconv or link https://aur.archlinux.org/packages/archconv
 # install-fulltty-grub v1.0 24-10-2025:
 bash -c "$(curl -fsSL https://raw.githubusercontent.com/claudemods/vanillaarch-to-cachyos/refs/heads/main/install-fulltty-grub/install-from-github.sh)"
 
-# install-fullkde-grub v1.0 24-10-2025:
+# install-fullkde-grub v1.01 27-10-2025:
 bash -c "$(curl -fsSL https://raw.githubusercontent.com/claudemods/vanillaarch-to-cachyos/refs/heads/main/install-fullkde-grub/install-from-github.sh)"
 
 # install-fullgnome-grub v1.0 24-10-2025:
 bash -c "$(curl -fsSL https://raw.githubusercontent.com/claudemods/vanillaarch-to-cachyos/refs/heads/main/install-fullgnome-grub/install-from-github.sh)"
 
-# install-fulltty-systemd-boot v1.0 24-10-2025:
+# install-fulltty-systemd-boot v1.01 27-10-2025:
 bash -c "$(curl -fsSL https://raw.githubusercontent.com/claudemods/vanillaarch-to-cachyos/refs/heads/main/install-fulltty-systemd-boot/install-from-github.sh)"
 
 # install-fullkde-systemd-boot v1.0 24-10-2025:
