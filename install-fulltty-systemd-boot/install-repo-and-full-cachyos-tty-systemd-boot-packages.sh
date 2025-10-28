@@ -21,7 +21,7 @@ cat << "EOF"
 EOF
 
 echo -e "${CYAN}"
-echo "           claudemods Vanilla Arch Tty Systemd-Boot to CachyOS Tty Systemd-Boot v1.0 24-10-2025"
+echo "           claudemods Vanilla Arch Tty Systemd-Boot to CachyOS Tty Systemd-Boot v1.01 28-10-2025"
 echo -e "${NC}"
 echo "================================================================================"
 echo ""
@@ -998,8 +998,8 @@ print_status "Plymouth theme configured"
 
 print_info "Configuring Fish shell..."
 mkdir /home/$USER/.config/fish
-cp -r /home/$USER/vanillaarch-to-cachyos/install-fullkde-grub/config.fish /home/$USER/.config/fish/config.fish
-cp -r /home/$USER/vanillaarch-to-cachyos/install-fullkde-grub/.zshrc /home/$USER/.zshrc
+cp -r /home/$USER/vanillaarch-to-cachyos/install-fulltty-systemd-boot/config.fish /home/$USER/.config/fish/config.fish
+cp -r /home/$USER/vanillaarch-to-cachyos/install-fulltty-systemd-boot/.zshrc /home/$USER/.zshrc
 sudo chmod +X /home/$USER/.config/fish/config.fish
 chsh -s $(which fish)
 print_status "Fish configuration applied"
