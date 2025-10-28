@@ -21,7 +21,7 @@ cat << "EOF"
 EOF
 
 echo -e "${CYAN}"
-echo "           claudemods Vanilla Arch Gnome Grub to CachyOS Gnome Grub v1.0 24-10-2025"
+echo "           claudemods Vanilla Arch Gnome Grub to CachyOS Gnome Grub v1.01 28-10-2025"
 echo -e "${NC}"
 echo "================================================================================"
 echo ""
@@ -1253,7 +1253,7 @@ print_status "Package installation completed"
 print_section "Step 3: System Configuration"
 
 print_info "Configuring GRUB bootloader..."
-sudo cp -r /home/$USER/vanillaarch-to-cachyos/install-fullkde-grub/grub /etc/default
+sudo cp -r /home/$USER/vanillaarch-to-cachyos/install-fullgnome-grub/grub /etc/default
 print_status "GRUB configuration copied"
 
 print_info "Generating new GRUB configuration..."
@@ -1266,8 +1266,8 @@ print_status "Plymouth theme configured"
 
 print_info "Configuring Fish shell..."
 mkdir /home/$USER/.config/fish
-cp -r /home/$USER/vanillaarch-to-cachyos/install-fullkde-grub/config.fish /home/$USER/.config/fish/config.fish
-cp -r /home/$USER/vanillaarch-to-cachyos/install-fullkde-grub/.zshrc /home/$USER/.zshrc
+cp -r /home/$USER/vanillaarch-to-cachyos/install-fullgnome-grub/config.fish /home/$USER/.config/fish/config.fish
+cp -r /home/$USER/vanillaarch-to-cachyos/install-fullgnome-grub/.zshrc /home/$USER/.zshrc
 sudo chmod +X /home/$USER/.config/fish/config.fish
 chsh -s $(which fish)
 print_status "Fish configuration applied"
