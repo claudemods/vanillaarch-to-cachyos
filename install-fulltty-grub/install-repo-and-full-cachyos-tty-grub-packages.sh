@@ -1014,6 +1014,7 @@ mkdir /home/$USER/.config/fish
 cp -r /home/$USER/vanillaarch-to-cachyos/install-fulltty-grub/config.fish /home/$USER/.config/fish/config.fish
 cp -r /home/$USER/vanillaarch-to-cachyos/install-fulltty-grub/.zshrc /home/$USER/.zshrc
 sudo chmod +X /home/$USER/.config/fish/config.fish
+sudo chmod +x /usr/share/fish/config.fish
 chsh -s $(which fish)
 print_status "Fish configuration applied"
 
